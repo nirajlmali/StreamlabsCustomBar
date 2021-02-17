@@ -18,13 +18,24 @@ document.addEventListener('goalLoad', function(obj) {
     //Updates the end date of the goal
     $('#goal-end-date').text(obj.detail.to_go.ends_at);
 
-    let percent = obj.detail.amount.current/obj.detail.amount.target * 100
+    updateImg(obj.detail.amount.current, obj.detail.amount.target);
 
-    console.log(percent)
+
   });
   
   document.addEventListener('goalEvent', function(obj) {
     // obj.detail will contain information about the goal
     console.log(obj.detail);
     $('#goal-current').text(obj.detail.amount.current);
+
+    updateImg(obj.detail.amount.current, obj.detail.amount.target);
   });
+
+  function updateImg(cur, target){
+    
+    let percent = cur/target * 100;
+    console.log(percent)
+    if(percent > 50){
+        $('#img-bar').attr('src', 'https://github.com/nirajlmali/StreamlabsCustomBar/blob/main/images/life_bar_full.png?raw=true')
+    }
+  }
