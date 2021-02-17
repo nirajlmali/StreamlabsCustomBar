@@ -17,6 +17,10 @@ document.addEventListener('goalLoad', function(obj) {
 
     //Updates the end date of the goal
     $('#goal-end-date').text(obj.detail.to_go.ends_at);
+
+    let percent = obj.detail.amount.current/obj.detail.amount.target * 100
+
+    console.log(percent)
   });
   
   document.addEventListener('goalEvent', function(obj) {
