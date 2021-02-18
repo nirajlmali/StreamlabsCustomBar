@@ -31,11 +31,24 @@ document.addEventListener('goalLoad', function(obj) {
     updateImg(obj.detail.amount.current, obj.detail.amount.target);
   });
 
+  
+
   function updateImg(cur, target){
     
     let percent = cur/target * 100;
     console.log(percent)
-    if(percent > 50){
-        $('#img-bar').attr('src', 'https://github.com/nirajlmali/StreamlabsCustomBar/blob/main/images/life_bar_full.png?raw=true')
+
+    let i = 0;
+    for (i = 2; i < 100; i+=2) {
+        if (percent < i) {
+            let pic_idx = i/2;
+            let pic_src = 'https://github.com/nirajlmali/StreamlabsCustomBar/blob/main/images/Megaman%20X%20Life%20Follower%20Bar%20' + pic_idx + '.png?raw=true';
+            console.log(pic_src);
+            $('#img-bar').attr('src', pic_src);
+            break;
+        }
     }
+    if(i >= 100){
+        $('#img-bar').attr('src', 'https://github.com/nirajlmali/StreamlabsCustomBar/blob/main/images/Megaman%20X%20Life%20Follower%20Bar%2050%20(Full).png?raw=true');
+    } 
   }
