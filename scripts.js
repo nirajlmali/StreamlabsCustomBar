@@ -44,7 +44,7 @@
         else{
             let i = 0;
             for (i = 2; i < 100; i+=2) {
-                if (percent < i) {
+                if (percent <= i) {
                     let pic_idx = i/2;
                     let pic_src = 'https://github.com/nirajlmali/StreamlabsCustomBar/blob/main/images/Megaman%20X%20Life%20Follower%20Bar%20' + pic_idx + '.png?raw=true';
                     console.log(pic_src);
