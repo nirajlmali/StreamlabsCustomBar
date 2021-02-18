@@ -35,8 +35,8 @@
 
     function updateImg(cur, target){
         
-        let percent = cur/target * 100;
-        console.log(percent)
+        let percent = Math.floor(cur/target * 100);
+        // console.log(percent)
 
         if(percent == 0){
             $('#img-bar').attr('src', 'https://github.com/nirajlmali/StreamlabsCustomBar/blob/main/images/Megaman%20X%20Life%20Follower%20Bar%200%20(Empty).png?raw=true')
@@ -47,7 +47,8 @@
                 if (percent <= i) {
                     let pic_idx = i/2;
                     let pic_src = 'https://github.com/nirajlmali/StreamlabsCustomBar/blob/main/images/Megaman%20X%20Life%20Follower%20Bar%20' + pic_idx + '.png?raw=true';
-                    console.log(pic_src);
+                    // console.log(pic_idx);
+                    // console.log(pic_src);
                     $('#img-bar').attr('src', pic_src);
                     break;
                 }
